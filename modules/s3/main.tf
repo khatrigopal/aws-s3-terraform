@@ -1,6 +1,7 @@
 #S3 Bucket on Which we will add policy
 resource "aws_s3_bucket" "test-bucket" {
   bucket = "${var.bucket_name}"
+  force_destroy = "${var.bucket_force_destroy}"
 }
 
 #Resource to add bucket policy to a bucket 
@@ -27,4 +28,14 @@ data "aws_iam_policy_document" "public_read_access" {
       "${aws_s3_bucket.test-bucket.arn}/*",
     ]
   }
+}
+resource "aws_s3_bucket_versioning" "bucket_versioning" {
+  bucket = aws_s3_bucket.s3-bucket.id
+  versioning_configuration {
+    status = var.versioning
+  }
+}
+resource "aws_s3_bucket_acl" "acl" {
+  bucket = aws_s3_bucket.s3-bucket.id
+  acl    = var.acl
 }
