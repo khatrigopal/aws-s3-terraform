@@ -5,7 +5,8 @@ tags = {
 }
 
 ecr_name = [
-  "khatrig-firstdemo-ecr"
+  "khatrig-firstdemo-ecr",
+  "khatrig-seconddemo-ecr"
 ]
 
 image_mutability = "IMMUTABLE"
