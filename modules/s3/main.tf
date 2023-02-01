@@ -1,6 +1,6 @@
 #S3 Bucket on Which we will add policy
 resource "aws_s3_bucket" "test-bucket" {
-  bucket = "var.bucket_name"
+  bucket = "${var.bucket_name}"
 }
 
 #Resource to add bucket policy to a bucket 
