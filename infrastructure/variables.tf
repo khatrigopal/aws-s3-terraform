@@ -2,7 +2,7 @@ variable "bucket_name" {
   description = "The AWS region to use to create resources."
   }
 
-variable "acl" {
+variable "s3_acl" {
   type        = string
   description = " Defaults to private "
   default     = "private"
