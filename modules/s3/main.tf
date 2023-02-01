@@ -30,12 +30,12 @@ data "aws_iam_policy_document" "public_read_access" {
   }
 }
 resource "aws_s3_bucket_versioning" "bucket_versioning" {
-  bucket = aws_s3_bucket.s3-bucket.id
+  bucket = aws_s3_bucket.test-bucket.id
   versioning_configuration {
     status = var.versioning
   }
 }
 resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.s3-bucket.id
+  bucket = aws_s3_bucket.test-bucket.id
   acl    = var.acl
 }
