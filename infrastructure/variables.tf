@@ -38,3 +38,4 @@ variable "s3_restrict_public_buckets" {
   description = "s3_restrict_public_buckets"
   type        = bool
   default     = true
+}
