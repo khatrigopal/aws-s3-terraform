@@ -17,17 +17,8 @@ terraform {
 module "s3" {
   source     = "../modules/s3"
   bucket_name  = var.bucket_name
-  #force_destroy = var.bucket_force_destroy
-  }
-  
- resource "aws_s3_bucket_versioning" "bucket_versioning" {
-  bucket = aws_s3_bucket.s3-bucket.id
-  versioning_configuration {
-    status = var.versioning
-  }
+  #force_destroy = var.bucket_force_destroy 
+  versioning = var.versioning
+  acl        = var.s3_acl
 }
-resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.s3-bucket.id
-  acl    = var.acl
-}
-##########################
+ 
