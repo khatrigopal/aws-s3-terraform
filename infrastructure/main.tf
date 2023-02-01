@@ -16,6 +16,6 @@ terraform {
 ######### S3##############
 module "s3" {
   source     = "../modules/s3"
-  bucket  = var.bucket_name
+  bucket_name  = var.bucket_name
   }
 ##########################
