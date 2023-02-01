@@ -17,7 +17,7 @@ terraform {
 module "s3" {
   source     = "../modules/s3"
   bucket_name  = var.bucket_name
-  force_destroy = var.bucket_force_destroy
+  #force_destroy = var.bucket_force_destroy
   }
   
  resource "aws_s3_bucket_versioning" "bucket_versioning" {
