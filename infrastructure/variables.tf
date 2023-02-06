@@ -2,6 +2,14 @@ variable "bucket_name" {
   description = "The AWS region to use to create resources."
   }
 
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to add to all resources created by this example."
+  default = {
+    Author      = "Flutter"
+    Environment = "Dev"
+  }
+}
 variable "s3_acl" {
   type        = string
   description = " Defaults to private "
