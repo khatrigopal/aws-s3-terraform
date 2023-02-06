@@ -2,6 +2,15 @@ variable "bucket_name" {
   description = "The AWS region to use to create resources."
   }
 
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to add to all resources created by this example."
+  default = {
+    Author      = "Tamr"
+    Environment = "Example"
+  }
+}
+
 variable "acl" {
   type        = string
   description = " Defaults to private "
