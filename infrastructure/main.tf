@@ -17,6 +17,7 @@ terraform {
 module "s3" {
   source     = "../modules/s3"
   bucket_name  = var.bucket_name
+  tags              = "${var.tags}"
   #force_destroy = var.bucket_force_destroy 
   versioning = "${var.versioning}"
   acl        = "${var.s3_acl}"
