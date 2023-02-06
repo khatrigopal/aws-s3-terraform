@@ -55,11 +55,12 @@ variable "ecr_name" {
   type        = list(string)
   default     = null
 }
-variable "tags" {
-  description = "The key-value maps for tagging"
-  type        = map(string)
-  default     = {}
-}
+
+#variable "tags" {
+ # description = "The key-value maps for tagging"
+  #type        = map(string)
+  #default     = {}
+#}
 variable "image_mutability" {
   description = "Provide image mutability"
   type        = string
